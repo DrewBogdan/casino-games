@@ -5,7 +5,7 @@ import roulette.Roulette;
 public class Games {
 
     public static void main(String[] args) {
-        int game = 1;
+        int game = 3;
 
         if (game == 1) {
             craps();
