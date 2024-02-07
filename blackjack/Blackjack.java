@@ -7,12 +7,17 @@ public class Blackjack {
 
     public void run() {
         this.deck = new Deck(6);
-        Hand dealer = new Hand(deck);
-        Hand player = new Hand(deck);
-        dealer.draw();
-        player.draw();
-        System.out.println("Dealer: " + dealer.getHand() + " Value: " + dealer.getValue());
-        System.out.println("Player: " + player.getHand() + " Value: " + player.getValue());
+        round();
     }
 
+    public void round() {
+        Player user = new User();
+        Player dealer = new Dealer();
+        ((User) user).changeMoney(1200);
+        ((User) user).changeMoney(-111);
+        user.makeMove(this.deck);
+        dealer.makeMove(this.deck);
+        user.makeMove(this.deck);
+        dealer.makeMove(this.deck);
+    }
 }

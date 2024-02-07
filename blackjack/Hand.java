@@ -13,8 +13,22 @@ public class Hand {
 
     public int getValue() {
         int val = 0;
+        int aceCount = 0;
         for (Card card : hand) {
-            val += card.getValue();
+            if (card.isAce()) {
+                aceCount++;
+            }
+            else {
+                val += card.getValue();
+            }
+        }
+        for (int i = 0; i < aceCount; i++) {
+            if ((val + 11) > 21) {
+                val += 1;
+            }
+            else {
+                val += 11;
+            }
         }
         return val;
     }
@@ -25,7 +39,7 @@ public class Hand {
     }
 
     public void hit() {
-
+        this.hand.add(this.deck.getCard());
     }
 
     public ArrayList<Card> getHand() {

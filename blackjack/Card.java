@@ -25,6 +25,10 @@ public class Card {
     public int getValue() {
         return this.value;
     }
+
+    public boolean isAce() {
+        return this.ace;
+    }
     public String toString() {
         return (this.card + this.suit);
     }
