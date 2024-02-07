@@ -19,5 +19,12 @@ public class Blackjack {
         dealer.makeMove(this.deck);
         user.makeMove(this.deck);
         dealer.makeMove(this.deck);
+
+        if(user.getValue() > dealer.getValue() && user.getValue() <= 21) {
+            System.out.println("User Wins!");
+        }
+        else {
+            System.out.println("Dealer Wins!");
+        }
     }
 }

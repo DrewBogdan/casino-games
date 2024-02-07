@@ -8,7 +8,11 @@ public abstract class Player {
     public abstract void makeMove(Deck deck);
 
     public boolean bust() {
-        return hand.getValue() > 21;
+        return this.hand.getValue() > 21;
+    }
+
+    public int getValue() {
+        return this.hand.getValue();
     }
 
 }

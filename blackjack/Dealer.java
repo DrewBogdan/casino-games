@@ -3,6 +3,7 @@ package blackjack;
 import java.util.ArrayList;
 
 public class Dealer extends Player{
+
     public void makeMove(Deck deck) {
         if (this.drawn) {
             if (this.hand.getValue() < 17) {
