@@ -10,7 +10,7 @@ public class User extends Player{
     private int money;
     private String name;
 
-    public void makeMove(Deck deck) {
+    public boolean makeMove(Deck deck) {
         if (this.drawn) {
             System.out.println("Hit(h), Stand(s), Split(p)?");
             Scanner inp = new Scanner(System.in);
@@ -18,9 +18,10 @@ public class User extends Player{
             switch(val) {
                 case "h":
                     this.hand.hit();
-                    System.out.println("Hit! " + this.hand.getHand());
+                    return true;
                 case "s":
                     System.out.println("Stand!");
+                    return false;
                 case "p":
                     break;
             }
@@ -43,9 +44,10 @@ public class User extends Player{
                         validBet = false;
                 }
                 this.hand.draw();
-                System.out.println("Current Hand: " + this.hand.getHand());
             }
+            return true;
         }
+        return false;
     }
 
     public void name(String name) {
