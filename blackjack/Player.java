@@ -9,6 +9,10 @@ public abstract class Player {
 
     public abstract boolean makeMove(Deck deck);
 
+    public void drawCard(Card card) {
+        this.hand.giveCard(card);
+    }
+
     public boolean bust() {
         return this.hand.getValue() > 21;
     }

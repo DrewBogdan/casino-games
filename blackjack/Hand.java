@@ -33,13 +33,8 @@ public class Hand {
         return val;
     }
 
-    public void draw() {
-        this.hand.add(this.deck.getCard());
-        this.hand.add(this.deck.getCard());
-    }
-
-    public void hit() {
-        this.hand.add(this.deck.getCard());
+    public void giveCard(Card card) {
+        this.hand.add(card);
     }
 
     public ArrayList<Card> getHand() {

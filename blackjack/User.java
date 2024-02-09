@@ -10,6 +10,11 @@ public class User extends Player{
     private int money;
     private String name;
 
+    public User(String name) {
+        this.name = name;
+    }
+    public User(){}
+
     public boolean makeMove(Deck deck) {
         if (this.drawn) {
             System.out.println("Hit(h), Stand(s), Split(p)?");
@@ -43,7 +48,6 @@ public class User extends Player{
                     else
                         validBet = false;
                 }
-                this.hand.draw();
             }
             return true;
         }
